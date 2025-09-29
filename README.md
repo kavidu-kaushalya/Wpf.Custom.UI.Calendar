@@ -1,5 +1,5 @@
 # ModernCalendarLib
-
+https://www.nuget.org/packages/Wpf.Custom.UI.Calendar/
 A modern WPF calendar library for .NET 8 with custom date picker controls.
 
 ## Features
