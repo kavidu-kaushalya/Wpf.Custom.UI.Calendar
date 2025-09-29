@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="ModernCalendarLib.CustomDatePicker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ModernCalendarLib"
+             Background="{x:Null}"
+             BorderBrush="Transparent"
+             Width="200" Height="30">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition Width="30"/>
+		</Grid.ColumnDefinitions>
+
+        <TextBox x:Name="DateBox" Style="{DynamicResource Textboxenter}" IsReadOnly="True" VerticalContentAlignment="Center" Padding="5" TextChanged="DateBox_TextChanged"/>
+        <Button Grid.Column="1" Style="{DynamicResource TextboxenterButton}" Content="📅" Click="OpenCalendar_Click"/>
+		<Popup x:Name="CalendarPopup" PlacementTarget="{Binding ElementName=DateBox}"
+               Placement="Bottom" AllowsTransparency="True" StaysOpen="False">
+            <Border Style="{DynamicResource CalBackgroundBorder}">
+				<local:CustomCalendar Background="Transparent" x:Name="CalendarControl"/>
+			</Border>
+		</Popup>
+	</Grid>
+</UserControl>
